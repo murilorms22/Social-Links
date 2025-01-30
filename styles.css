@@ -50,6 +50,10 @@ body * {
     margin-top: 15px;
 }
 
+#links {
+    padding: 24px;
+}
+
 ul {
     display: flex;
     flex-direction: column;
@@ -69,4 +73,22 @@ ul li a{
 
     background-color: rgba(255, 255, 255, 0.1);
     text-decoration: none;
+}
+
+#icons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 24px;
+    justify-content: center;
+}
+
+#icons ion-icon {
+    width: 30px;
+    height: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 24px;
 }
