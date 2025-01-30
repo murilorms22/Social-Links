@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter;
+}
+
+body {
+    background-image: url(images/bg-light.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: auto;
+}
+
+#avatar {
+    border: 1px solid red;
+    display: block;
+    text-align: center;
+    color: white;
+}
+
+
+#avatar img {
+    width: 180px;
+}
+
+#avatar p {
+    font-weight: 500;
+    margin-top: 15px;
+}
+
