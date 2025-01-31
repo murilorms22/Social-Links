@@ -6,17 +6,34 @@
 
 :root {
     --text-color: white;
-    --surface-color-light-mode: #000000 0.05;
-    --stroke-color-light-mode: #000000 0.5;
-    --text-color-light-mode: #000000;
-    --stroke-color-dark-mode: rgba(255, 255, 255, 0.5);
+    --surface-color-mode: #000000 0.05;
+    --stroke-color-mode: #000000 0.5;
+    --text-color-mode: #000000;
+    --stroke-color-mode: rgba(255, 255, 255, 0.5);
+    --surface-color-mode: rgba(255, 255, 255, 0.1);
+    --switch-bg-url: url(/assets/moon-stars.svg);
+    --bg-url: url(images/bg-mobile.jpg);
+    --highlight-color: rgba(255, 255 ,255 , 0.1);
+}
+
+.light {
+    --text-color: black;
+    --surface-color-mode: #000000 0.05;
+    --stroke-color-mode: #000000 0.5;
+    --text-color-mode: #000000;
+    --stroke-color-mode: rgba(0, 0, 0, 0.5);
+    --surface-color-mode: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(/assets/sun.svg);
+    --bg-url: url(images/bg-mobile-light.jpg);
+    --highlight-color: rgba(0, 0, 0, 0.1);
 }
 
 body {
-    background-image: url(images/bg-mobile.jpg);
+    background-image: var(--bg-url);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+    height: 100vh;
 }
 
 body * {
@@ -41,7 +58,7 @@ body * {
 
 #avatar img {
     width: 112px;
-    border: 2px solid rgba(255, 255, 255, 0.7);
+    border: 2px solid var(--stroke-color-mode);
     border-radius: 100%;
 }
 
@@ -68,27 +85,103 @@ ul li a{
     align-items: center;
     padding: 16px 24px;
 
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--stroke-color-mode);
     border-radius: 8px;
 
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--surface-color-mode);
     text-decoration: none;
 }
 
 #icons {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-    padding: 24px;
     justify-content: center;
+
+    padding: 24px 0;
+    font-size: 32px;
 }
 
-#icons ion-icon {
-    width: 30px;
-    height: 30px;
+#icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+#icons a:hover {
+    background: var(--highlight-color);
 }
 
 footer {
     text-align: center;
     padding: 24px;
+}
+
+#track {
+    width: 64px;
+    height: 24px;
+    position: relative;
+    margin: auto;
+    border-radius: 9999px;
+    border: 1px solid var(--stroke-color-mode);
+    background: var(--surface-color-mode);
+    cursor: pointer;
+}
+
+#track-dentro button {
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: white var(--switch-bg-url) no-repeat center;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+    padding: 8px;
+
+    position: absolute;
+    left: -4%;
+    top: 50%; 
+    transform: translateY(-50%);   
+
+    animation: dir-esq 0.2s;
+}
+
+#track-dentro button:hover {
+    outline: 8px solid var(--highlight-color);
+}
+
+.light #track-dentro button {
+    animation: esq-dir 0.2s forwards;
+}
+
+@keyframes esq-dir {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+
+}
+
+@keyframes dir-esq {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@media (min-width: 700px) {
+    :root {
+        --bg-url: url(images/bg-desktop.jpg);
+    }
+
+    .light {
+        --bg-url: url(images/bg-desktop-light.jpg);
+    }
 }
