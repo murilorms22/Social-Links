@@ -11,7 +11,7 @@
     --text-color-mode: #000000;
     --stroke-color-mode: rgba(255, 255, 255, 0.5);
     --surface-color-mode: rgba(255, 255, 255, 0.1);
-    --switch-bg-url: url(/assets/moon-stars.svg);
+    --switch-bg-url: url(/images/moon-stars.svg);
     --bg-url: url(images/bg-mobile.jpg);
     --highlight-color: rgba(255, 255 ,255 , 0.1);
 }
@@ -23,7 +23,7 @@
     --text-color-mode: #000000;
     --stroke-color-mode: rgba(0, 0, 0, 0.5);
     --surface-color-mode: rgba(0, 0, 0, 0.1);
-    --switch-bg-url: url(/assets/sun.svg);
+    --switch-bg-url: url(/images/sun.svg);
     --bg-url: url(images/bg-mobile-light.jpg);
     --highlight-color: rgba(0, 0, 0, 0.1);
 }
